@@ -22,11 +22,8 @@ public class Programa {
 			System.out.print("Target: ");
 			ChessPosition target = UI.readChessPosition(sc);
 			
-			ChessPiece capturedPiece = chessMatch.preformChessMove(source, target);
-			
+			ChessPiece capturedPiece = chessMatch.preformChessMove(source, target);	
 		}
-
 	
 	}
-
 }
