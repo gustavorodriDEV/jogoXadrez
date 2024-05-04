@@ -6,8 +6,5 @@ public class BoardExeception extends RuntimeException {
 	public BoardExeception(String msg) {
 		super(msg);
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> 8c3ad186e962b6392c2d133607c6078c116edcb4
 }
