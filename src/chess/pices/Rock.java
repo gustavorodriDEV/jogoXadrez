@@ -14,5 +14,4 @@ public class Rock extends ChessPiece {
 	public String toString() {
 		return "R";
 	}
-
 }
