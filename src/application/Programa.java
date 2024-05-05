@@ -15,6 +15,7 @@ public class Programa {
 		ChessMatch chessMatch = new ChessMatch();
 
 		while (true) {
+
 			try {
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPiece());
@@ -30,7 +31,7 @@ public class Programa {
 			} catch (ChessExeception e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
-			} catch (InputMismatchException  e) {
+			} catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
