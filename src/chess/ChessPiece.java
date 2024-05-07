@@ -2,6 +2,7 @@ package chess;
 
 import bordgame.Board;
 import bordgame.Piece;
+import bordgame.Position;
 
 public class ChessPiece extends Piece {
 
@@ -16,10 +17,15 @@ public class ChessPiece extends Piece {
 		return color;
 	}
 
-	@Override
-	public boolean[][] possibleMoves(){
-		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-		return mat;
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece p = (ChessPiece) getBoard().piece(position);
+		return p != null && p.getColor() != color;
 	}
 
+	@Override
+	public boolean[][] possibleMoves() {
+		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return mat;
+
+	}
 }
