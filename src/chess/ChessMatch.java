@@ -4,7 +4,7 @@ import bordgame.Board;
 import bordgame.Piece;
 import bordgame.Position;
 import chess.pices.King;
-import chess.pices.Rock;
+import chess.pices.Rook;
 
 public class ChessMatch {
 
@@ -67,18 +67,18 @@ public class ChessMatch {
 	}
 
 	private void initialStup() {
-		placeNewPiece('c', 1, new Rock(board, Color.WHITE));
-		placeNewPiece('c', 2, new King(board, Color.WHITE));
-		placeNewPiece('d', 2, new King(board, Color.WHITE));
-		placeNewPiece('e', 2, new Rock(board, Color.WHITE));
-		placeNewPiece('e', 1, new King(board, Color.WHITE));
+		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rook(board, Color.WHITE));
 		placeNewPiece('d', 1, new King(board, Color.WHITE));
 
-		placeNewPiece('c', 7, new Rock(board, Color.BLACK));
-		placeNewPiece('c', 8, new King(board, Color.BLACK));
-		placeNewPiece('d', 7, new King(board, Color.BLACK));
-		placeNewPiece('e', 7, new Rock(board, Color.BLACK));
-		placeNewPiece('e', 8, new King(board, Color.BLACK));
+		placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rook(board, Color.BLACK));
 		placeNewPiece('d', 8, new King(board, Color.BLACK));
 
 	}
