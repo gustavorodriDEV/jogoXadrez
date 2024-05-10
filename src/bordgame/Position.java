@@ -35,4 +35,9 @@ public class Position {
 	public String toString() {
 		return row + ", " + column;
 	}
+
+	public void setValues(int row2, boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }

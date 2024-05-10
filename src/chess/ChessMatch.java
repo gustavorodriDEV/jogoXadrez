@@ -8,6 +8,7 @@ import bordgame.Board;
 import bordgame.Piece;
 import bordgame.Position;
 import chess.pices.King;
+import chess.pices.Pawn;
 import chess.pices.Rook;
 
 public class ChessMatch {
@@ -73,17 +74,17 @@ public class ChessMatch {
 		}
 
 		check = (testCheck(opponent(currenPlayer))) ? true : false;
-		
-		if(testCheckMate(opponent(currenPlayer))) {
+
+		if (testCheckMate(opponent(currenPlayer))) {
 			checkMate = true;
-		}else {
+		} else {
 			nextTurn();
 		}
 		return (ChessPiece) capturedPiece;
 	}
 
 	private Piece makeMove(Position source, Position target) {
-		ChessPiece p = (ChessPiece)board.removePiece(source);
+		ChessPiece p = (ChessPiece) board.removePiece(source);
 		p.increaseMoveCount();
 		Piece capturedPiece = board.removePiece(target);
 		board.placePiece(p, target);
@@ -97,7 +98,7 @@ public class ChessMatch {
 	}
 
 	public void undoMove(Position source, Position target, Piece capturedPiece) {
-		ChessPiece p = (ChessPiece)board.removePiece(target);
+		ChessPiece p = (ChessPiece) board.removePiece(target);
 		p.decreaseMoveCount();
 		board.placePiece(p, source);
 
@@ -192,13 +193,20 @@ public class ChessMatch {
 	}
 
 	private void initialStup() {
-		placeNewPiece('h', 7, new Rook(board, Color.WHITE));
-		placeNewPiece('d', 1, new Rook(board, Color.WHITE));
+		// Peças brancas
+		placeNewPiece('a', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('h', 1, new Rook(board, Color.WHITE));
 		placeNewPiece('e', 1, new King(board, Color.WHITE));
+		for (char c = 'a'; c <= 'h'; c++) {
+			placeNewPiece(c, 2, new Pawn(board, Color.WHITE));
+		}
 
-		placeNewPiece('b', 8, new Rook(board, Color.BLACK));
-		placeNewPiece('a', 8, new King(board, Color.BLACK));
-
+		// Peças pretas
+		placeNewPiece('a', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('h', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 8, new King(board, Color.BLACK));
+		for (char c = 'a'; c <= 'h'; c++) {
+			placeNewPiece(c, 7, new Pawn(board, Color.BLACK));
+		}
 	}
-
 }
