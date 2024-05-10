@@ -9,6 +9,7 @@ import bordgame.Piece;
 import bordgame.Position;
 import chess.pices.Bishop;
 import chess.pices.King;
+import chess.pices.Knight;
 import chess.pices.Pawn;
 import chess.pices.Rook;
 
@@ -196,20 +197,24 @@ public class ChessMatch {
 	private void initialStup() {
 		// Peças brancas
 		placeNewPiece('a', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('g', 1, new Knight(board, Color.WHITE));
 		placeNewPiece('c', 1, new Bishop(board, Color.WHITE));
 		placeNewPiece('h', 1, new Rook(board, Color.WHITE));
 		placeNewPiece('e', 1, new King(board, Color.WHITE));
 		placeNewPiece('f', 1, new Bishop(board, Color.WHITE));
+		placeNewPiece('b', 1, new Knight(board, Color.WHITE));
 		for (char c = 'a'; c <= 'h'; c++) {
 			placeNewPiece(c, 2, new Pawn(board, Color.WHITE));
 		}
 
 		// Peças pretas
 		placeNewPiece('a', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('g', 8, new Knight(board, Color.BLACK));
 		placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
 		placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
 		placeNewPiece('h', 8, new Rook(board, Color.BLACK));
 		placeNewPiece('e', 8, new King(board, Color.BLACK));
+		placeNewPiece('b', 8, new Knight(board, Color.BLACK));
 		for (char c = 'a'; c <= 'h'; c++) {
 			placeNewPiece(c, 7, new Pawn(board, Color.BLACK));
 		}
